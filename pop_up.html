@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업</title>
+
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .box{
+            width: 300px;
+            height: 400px;
+            background-color: lightcoral;
+            cursor: pointer;
+        }
+
+        .pop_up{
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .close_btn{
+            font-size: 30px;
+            cursor: pointer;
+            margin-left: 30px;
+        }
+
+        .active{
+            display: block;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="box"></div>
+
+    <div class="pop_up">
+        <div class="close_btn">X</div>
+    </div>
+
+    <script>
+
+        // 1.box를 클릭하면 pop_up에 클래스를 추가 시키기
+        // 2.close를 클릭하면 pop_up에 클래스를 제거 시키기
+
+        const boxEl = document.querySelector(".box")            
+        const pop_upEl = document.querySelector('.pop_up')
+        const close_btnEl = document.querySelector('.close_btn')
+        // console.log(boxEl, pop_upEl, close_btnEl)
+
+        boxEl.addEventListener('click', () => pop_upEl.classList.add('active'))
+        close_btnEl.addEventListener('click', () => pop_upEl.classList.remove('active'))
+        
+    </script>
+    
+</body>
+</html>
